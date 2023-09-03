@@ -9,10 +9,16 @@ if (process.env.NODE_ENV !== "production") {
 
 
 // Using Middlewares
+// app.use("*",cors({
+//   origin:true,
+//   credentials:true,
+// }));
+
 app.use("*",cors({
-  origin:true,
+  origin:['https://64f4d98ecba86e443c9dc444--exquisite-cendol-cd7329.netlify.app/','http://localhost:3000/'],
   credentials:true,
 }));
+
 app.use(cookieParser());
 
 app.use(express.json({ limit: "50mb" }));
