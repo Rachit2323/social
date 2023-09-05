@@ -31,6 +31,7 @@ export const loginUser = (email, password) => async (dispatch) => {
   }
 };
 
+//this is comment
 export const loadUser = () => async (dispatch) => {
   try {
     dispatch({
