@@ -1,6 +1,6 @@
 import axios from "axios";
-const API="http://localhost:4000";
-// const API="https://ssoocial-app.onrender.com"
+// const API="http://localhost:4000";
+const API="https://ssssocial.onrender.com"
 export const likePost = (id) => async (dispatch) => {
   try {
     dispatch({
