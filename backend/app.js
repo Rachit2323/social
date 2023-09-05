@@ -25,6 +25,20 @@ app.use("*", cors({
 }));
 
 
+app.use(
+  session({
+    secret: "ybjbjbjbjbjbjb", // Replace with your secret key
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      secure: true, // Set to true for production if using HTTPS
+      maxAge: 3600000, // Session expiration time in milliseconds (1 hour in this example)
+      sameSite: 'none', // Set SameSite attribute to 'none' for cross-origin requests
+    },
+  })
+);
+
+
 // app.use("*",cors({
 //   origin:['http://localhost:3000/'],
 //   credentials:true,
