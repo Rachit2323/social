@@ -31,6 +31,7 @@ exports.register = async (req, res) => {
     const options = {
       expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
       httpOnly: true,
+      secure:true,
     };
 
 
@@ -83,6 +84,7 @@ exports.login = async (req, res) => {
       success: true,
       user,
       token,
+      secure:true,
     });
   } catch (error) {
     res.status(500).json({
