@@ -1,5 +1,6 @@
 import axios from "axios";
 const API="http://localhost:4000";
+// const API="https://ssoocial-app.onrender.com"
 
 export const loginUser = (email, password) => async (dispatch) => {
   try {
@@ -51,6 +52,7 @@ export const loadUser = () => async (dispatch) => {
     });
   }
 };
+
 
 export const getFollowingPosts = () => async (dispatch) => {
   try {
