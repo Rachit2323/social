@@ -35,7 +35,7 @@ exports.register = async (req, res) => {
     };
 
 
-    res.cookie("token", token, options);
+    // res.cookie("token", token, options);
     res.status(201).json({
       success: true,
       user,
@@ -75,13 +75,13 @@ exports.login = async (req, res) => {
 
     const token = await user.generateToken();
 
-    const options = {
-      expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-      httpOnly: true,
-      secure:true,
-    };
+    // const options = {
+    //   expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+    //   httpOnly: true,
+    //   secure:true,
+    // };
 
-    res.status(200).cookie("token", token, options).json({
+    res.status(200).json({
       success: true,
       user,
       token,

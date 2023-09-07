@@ -1,6 +1,8 @@
 import axios from "axios";
-const API="http://localhost:4000";
-// const API="https://ssssocial.onrender.com"
+import Cookies from 'js-cookie';
+// const API="http://localhost:4000";
+
+const API="https://ssssocial.onrender.com"
 
 export const loginUser = (email, password) => async (dispatch) => {
   try {
@@ -19,6 +21,7 @@ export const loginUser = (email, password) => async (dispatch) => {
       }
     );
 
+    Cookies.set('token', data.token, { expires: 7 });
     dispatch({
       type: "LoginSuccess",
       payload: data.user,
@@ -161,6 +164,7 @@ export const registerUser =
         }
       );
 
+      Cookies.set('token', data.token, { expires: 7 });
       dispatch({
         type: "RegisterSuccess",
         payload: data.user,
