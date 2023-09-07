@@ -13,7 +13,7 @@ const allowedHeaders = ["Authorization", "Content-Type"];
 const allowedMethods = ["GET", "POST", "PUT", "DELETE"]; 
 
 app.use("*", cors({
-  origin: true,
+   origin:['http://localhost:3000','https://serene-alpaca.netlify.app'],
   credentials: true,
   allowedHeaders, // Include the allowed headers array
   methods: allowedMethods.join(), // Include the allowed methods as a comma-separated string
