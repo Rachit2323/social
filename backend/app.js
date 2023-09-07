@@ -8,36 +8,24 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 
-// Using Middlewares
+
 const allowedHeaders = ["Authorization", "Content-Type"]; 
 const allowedMethods = ["GET", "POST", "PUT", "DELETE"]; 
 
-app.use("*", cors({
-  origin: true,
-  credentials: true,
-  allowedHeaders, // Include the allowed headers array
-  methods: allowedMethods.join(), // Include the allowed methods as a comma-separated string
-}));
-
-
-app.use(
-  session({
-    secret: "yzxcsccsccscscscs", // Replace with your secret key
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      secure: true, // Set to true for production if using HTTPS
-      maxAge: 3600000, // Session expiration time in milliseconds (1 hour in this example)
-      sameSite: 'none', // Set SameSite attribute to 'none' for cross-origin requests
-    },
-  })
-);
-
-
-// app.use("*",cors({
-//   origin:['http://localhost:3000/'],
-//   credentials:true,
+// app.use("*", cors({
+//   origin: true,
+//   credentials: true,
+//   // allowedHeaders, // Include the allowed headers array
+//   // methods: allowedMethods.join(), // Include the allowed methods as a comma-separated string
 // }));
+
+
+
+
+app.use("*",cors({
+  origin:['http://localhost:3000','https://serene-alpaca.netlify.app'],
+  credentials:true,
+}));
 
 app.use(cookieParser());
 

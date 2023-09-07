@@ -1,6 +1,6 @@
 import axios from "axios";
-// const API="http:// localhost:4000";
-const API="https://ssssocial.onrender.com"
+const API="http://localhost:4000";
+// const API="https://ssssocial.onrender.com"
 
 export const loginUser = (email, password) => async (dispatch) => {
   try {
